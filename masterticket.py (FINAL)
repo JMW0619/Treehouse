@@ -1,0 +1,31 @@
+TICKET_PRICE = 10
+SERVICE_CHARGE = 2
+tickets_remaining = 100 
+
+import math
+import sys
+
+def calculate_price(num_tickets):
+  return (num_tickets * TICKET_PRICE) + SERVICE_CHARGE
+
+while tickets_remaining >= 1:
+  print("There are {} tickets remaining.".format(tickets_remaining))
+  name = input("What is your name?   ")
+  number_of_tickets = (input("Hey, {}, how many tickets would you like?  ".format(name)))
+  try:
+    number_of_tickets = int(number_of_tickets)
+    if number_of_tickets > tickets_remaining:
+      raise ValueError("There are only {} tickets remaining".format(tickets_remaining))
+  except ValueError as err:
+    print("Well that is not a number I can use. {}".format(err))
+  else:
+    client_total = calculate_price(number_of_tickets)
+    print("Your total will be ${}.".format(client_total))
+    proceed = input("Would you like to proceed?   Y/N ")
+    if proceed.lower() == "y":
+      # TODO: Gather cc information and process it
+      print("SOLD!")
+      tickets_remaining -= number_of_tickets
+    else:
+      print("Thank you for stopping by, {}, we hope to see you again!".format(name))
+print("Oh no! No more tickets!")
