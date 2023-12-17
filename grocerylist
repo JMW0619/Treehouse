@@ -1,0 +1,43 @@
+grocery_list = []
+
+
+def add_to_list(item):
+  grocery_list.append(item)
+  print("Got it! There are {} things on your list."
+        .format(len(grocery_list)))
+  
+  
+def show_help():
+  print("What should we pick up at the store?")
+  print("""
+Enter 'DONE' to stop adding items.
+Enter 'HELP' for this help.
+Enter 'SHOW' to view your updated list
+""")
+
+  
+def show_list():
+  print("Here's your list:")
+  for item in grocery_list:
+    print(item)
+    
+  
+show_help()
+while True:  #allows loop to run infinitely
+  new_item = input("> ")
+  
+  if new_item == 'DONE':
+    break
+    
+  elif new_item == 'HELP':
+    show_help()
+    continue #this will reactive the 'while' loop
+    
+  elif new_item == 'SHOW':
+    show_list()
+    continue
+    
+  add_to_list(new_item) #runs fx add_to_list
+  
+  
+show_list()
