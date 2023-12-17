@@ -30,3 +30,11 @@ def display_wishlist(display_name, wishes):
     
 display_wishlist("Books", books)
 display_wishlist("Video Games", video_games)
+
+quote = "The greatest teacher failure is"
+words = quote.split() #takes the initial string and prints as a list
+words #runs the new list from the .split() commands
+import time #imports time functionality
+for word in words:
+  print(word)
+  time.sleep(.5) #adds 1/2 second delay between prints
