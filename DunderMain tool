@@ -1,0 +1,21 @@
+# (app.py portion)
+import alphabet
+
+word_list = ["hamster", "turtle", "cat", "bird"]
+last_names = ["Rodriguez", "Lee", "Takinian", "Amendola"]
+
+print(alphabet.first_alpha(word_list))
+print(alphabet.first_alpha(last_names))
+
+#---------------------------------------------
+
+#(alphabet.py portion)
+def first_alpha(words):
+  return min(words)
+
+if __name__ == "__main__": #Dunder Main argument
+  word_list = ["hamster", "turtle", "cat", "bird"]
+  print(first_alpha(word_list))
+
+
+#DunderMain allows reference to other files (modules) without forcing them to run
